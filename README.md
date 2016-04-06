@@ -10,3 +10,6 @@ docker run docker-spark-test
 ```
 USAGE: ./test.sh <docker img> <spark_env_sh_file> <spark_defaults_conf_file> nvert[ nvert[ ...]]
 ```
+##I also added sample files
+`spark-env.sh`
+`spark-defaults.conf`
