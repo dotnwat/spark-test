@@ -1,6 +1,6 @@
 ```bash
 git clone https://github.com/mtnriver/spark-test.git
-pushd spark-test
+cd spark-test
 docker build -t=docker-spark-test .
 ./test.sh  docker-spark-test spark-env.sh spark-defaults.conf 10
 ```
