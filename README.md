@@ -2,7 +2,8 @@
 git clone https://github.com/mtnriver/spark-test.git
 cd spark-test
 docker build -t=docker-spark-test .
-rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 10
+./test.sh docker-spark-test spark-env.sh spark-defaults.conf 10
+#you may have to execute `rm /tmp/cid` to execute another iteration
 rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 20
 rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 30
 ...
