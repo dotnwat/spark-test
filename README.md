@@ -2,7 +2,10 @@
 git clone https://github.com/mtnriver/spark-test.git
 cd spark-test
 docker build -t=docker-spark-test .
-./test.sh  docker-spark-test spark-env.sh spark-defaults.conf 10
+rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 10
+rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 20
+rm /tmp/cid;  ./test.sh docker-spark-test spark-env.sh spark-defaults.conf 30
+...
 ```
 
 
