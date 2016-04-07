@@ -29,5 +29,10 @@ echo localhost > conf/slaves
 
 sbin/start-all.sh
 
+extra_args=""
+if [ ! -z $NUMEPART ]; then
+  extra_args="$extra_args -numEPart=$NUMEPART"
+fi
+
 MASTER="spark://`hostname`:7077" bin/run-example graphx.SynthBenchmark \
-  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts
+  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts ${extra_args}
