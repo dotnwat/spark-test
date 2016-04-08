@@ -27,5 +27,10 @@ echo "spark.executor.extraJavaOptions -d64 -server -XX:GCTimeRatio=24 -XX:Initia
 
 sbin/start-all.sh
 
-MASTER="spark://`hostname`:7077" bin/run-example graphx.SynthBenchmark \
-  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts
+extra_args=""
+if [ ! -z $NUMEPARTS ]; then
+  extra_args="$extra_args -numEPart=$NUMEPARTS"
+fi
+
+echo "MASTER="spark://`hostname`:7077" bin/run-example graphx.SynthBenchmark \
+  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts ${extra_args}"
