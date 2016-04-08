@@ -32,5 +32,5 @@ if [ ! -z $NUMEPARTS ]; then
   extra_args="$extra_args -numEPart=$NUMEPARTS"
 fi
 
-echo "MASTER="spark://`hostname`:7077" bin/run-example graphx.SynthBenchmark \
-  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts ${extra_args}"
+MASTER="spark://`hostname`:7077" bin/run-example graphx.SynthBenchmark \
+  -app=pagerank -niters=10 -seed=1234 -nverts=$nverts ${extra_args}
