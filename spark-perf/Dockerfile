@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
 
-RUN apt-get -y update
-RUN apt-get -y install default-jdk vim tmux git curl openssh-server
+RUN apt-get update && apt-get -y install default-jdk vim tmux git curl openssh-server
 
 RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 RUN ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -N ''
