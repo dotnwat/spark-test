@@ -162,7 +162,7 @@ COMMON_OPTS = [
     OptionSet("num-trials", [1]),
     # Extra pause added between trials, in seconds. For runs with large amounts
     # of shuffle data, this gives time for buffer cache write-back.
-    #OptionSet("inter-trial-wait", [3])
+    OptionSet("inter-trial-wait", [3])
 ]
 
 # The following options value sets are shared among all tests of
