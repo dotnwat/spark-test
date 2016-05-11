@@ -1,13 +1,14 @@
-Instructions:
+Instructions
 
 ```
 git clone https://github.com/noahdesu/spark-test.git
 cd spark-test/spark-perf
 ./run.sh
+```
 
 ## Customizing the run
 
-Setup `spark-env.sh`:
+Setup `spark-env.sh`
 
 ```
 SPARK_WORKER_INSTANCES=2
@@ -27,7 +28,7 @@ OptionSet("num-trials", [2]),
 
 ## Results
 
-Example output:
+Example output
 
 ```
 glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=6 --random-seed=5 --num-examples=50000 --feature-noise=1.0 --num-features=10000 --num-iterations=20 --step-size=0.001 --reg-type=l2 --reg-param=0.1 --elastic-net-param=0.0 --optimizer=sgd --intercept=0.0 --label-noise=0.1 --loss=l2
@@ -42,7 +43,7 @@ Training Set Metric: 85.1502369005, 0.000, 85.1502369005, 85.1502369005, 85.1502
 Test Set Metric: 84.9587306675, 0.000, 84.9587306675, 84.9587306675, 84.9587306675
 ```
 
-Explanation:
+Explanation
 
 ```
 glm-regresion, ...: test and test parameters / options
