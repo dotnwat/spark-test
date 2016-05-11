@@ -10,7 +10,6 @@ RUN chmod 600 ~/.ssh/authorized_keys
 RUN curl -O http://apache.cs.utah.edu/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz
 RUN tar xzf spark-1.6.1-bin-hadoop2.6.tgz
 RUN mv spark-1.6.1-bin-hadoop2.6 spark
-RUN echo "localhost" > /spark/conf/slaves
 
 RUN git clone https://github.com/databricks/spark-perf
 RUN cd /spark-perf/mllib-tests; sbt/sbt -Dspark.version=1.6.0 clean assembly

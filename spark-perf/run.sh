@@ -3,19 +3,19 @@
 set -e
 set -x
 
-cdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+docker build -t spark-perf .
 
-docker build -t spark-perf $cdir
+mkdir results || true
 
-if [ -d results ]; then
-  mv results results.prev
-fi
-
-mkdir results
+sudo rm -rf logs
+mkdir logs
 
 # -it --entrypoint=/bin/bash \
 docker run \
   --rm -it \
-  -v $cdir/config.py.tiny:/spark-perf/config/config.py \
+  -v `pwd`/config.py.tiny:/spark-perf/config/config.py \
+  -v `pwd`/spark-env.sh:/spark/conf/spark-env.sh \
+  -v `pwd`/slaves:/spark/conf/slaves \
   -v `pwd`/results:/spark-perf/results \
+  -v `pwd`/logs/:/spark/logs \
   spark-perf bin/run
