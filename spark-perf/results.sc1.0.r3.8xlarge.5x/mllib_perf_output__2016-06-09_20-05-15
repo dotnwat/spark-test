@@ -1,0 +1,272 @@
+glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --feature-noise=1.0 --num-features=10000 --num-iterations=20 --step-size=0.001 --reg-type=l2 --reg-param=0.1 --elastic-net-param=0.0 --optimizer=sgd --intercept=0.0 --label-noise=0.1 --loss=l2
+Training time: 15.262, 0.000, 15.262, 15.262, 15.262
+Test time: 0.598, 0.000, 0.598, 0.598, 0.598
+Training Set Metric: 33.4277252905, 0.000, 33.4277252905, 33.4277252905, 33.4277252905
+Test Set Metric: 33.447720177, 0.000, 33.447720177, 33.447720177, 33.447720177
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --feature-noise=1.0 --num-features=10000 --num-iterations=20 --step-size=0.001 --reg-type=l2 --reg-param=0.1 --elastic-net-param=0.0 --per-negative=0.3 --optimizer=sgd --loss=logistic
+Training time: 12.983, 0.000, 12.983, 12.983, 12.983
+Test time: 0.494, 0.000, 0.494, 0.494, 0.494
+Training Set Metric: 84.9263577248, 0.000, 84.9263577248, 84.9263577248, 84.9263577248
+Test Set Metric: 84.9997799674, 0.000, 84.9997799674, 84.9997799674, 84.9997799674
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --feature-noise=1.0 --num-features=10000 --num-iterations=20 --step-size=0.001 --reg-type=l2 --reg-param=0.1 --elastic-net-param=0.0 --per-negative=0.3 --optimizer=l-bfgs --loss=logistic
+Training time: 28.347, 0.000, 28.347, 28.347, 28.347
+Test time: 0.517, 0.000, 0.517, 0.517, 0.517
+Training Set Metric: 87.1383758801, 0.000, 87.1383758801, 87.1383758801, 87.1383758801
+Test Set Metric: 85.0285842305, 0.000, 85.0285842305, 85.0285842305, 85.0285842305
+glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=0.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --label-noise=0.1 --intercept=0.2 --loss=l2 --num-features=10000
+Training time: 55.621, 0.000, 55.621, 55.621, 55.621
+Test time: 0.638, 0.000, 0.638, 0.638, 0.638
+Training Set Metric: 0.100039951348, 0.000, 0.100039951348, 0.100039951348, 0.100039951348
+Test Set Metric: 0.100948643415, 0.000, 0.100948643415, 0.100948643415, 0.100948643415
+glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=1.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --label-noise=0.1 --intercept=0.2 --loss=l2 --num-features=10000
+Training time: 58.603, 0.000, 58.603, 58.603, 58.603
+Test time: 0.541, 0.000, 0.541, 0.541, 0.541
+Training Set Metric: 1.00427337274, 0.000, 1.00427337274, 1.00427337274, 1.00427337274
+Test Set Metric: 1.01450313184, 0.000, 1.01450313184, 1.01450313184, 1.01450313184
+glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=0.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --label-noise=0.1 --intercept=0.2 --loss=l2 --num-features=200
+Training time: 2.071, 0.000, 2.071, 2.071, 2.071
+Test time: 0.197, 0.000, 0.197, 0.197, 0.197
+Training Set Metric: 0.100594707178, 0.000, 0.100594707178, 0.100594707178, 0.100594707178
+Test Set Metric: 0.100734173075, 0.000, 0.100734173075, 0.100734173075, 0.100734173075
+glm-regression, glm-regression --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=1.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --label-noise=0.1 --intercept=0.2 --loss=l2 --num-features=200
+Training time: 2.927, 0.000, 2.927, 2.927, 2.927
+Test time: 0.15, 0.000, 0.15, 0.15, 0.15
+Training Set Metric: 0.172540047639, 0.000, 0.172540047639, 0.172540047639, 0.172540047639
+Test Set Metric: 0.172511223287, 0.000, 0.172511223287, 0.172511223287, 0.172511223287
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=0.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --per-negative=0.3 --loss=logistic --num-features=10000
+Training time: 103.649, 0.000, 103.649, 103.649, 103.649
+Test time: 0.542, 0.000, 0.542, 0.542, 0.542
+Training Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+Test Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=1.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --per-negative=0.3 --loss=logistic --num-features=10000
+Training time: 154.891, 0.000, 154.891, 154.891, 154.891
+Test time: 0.565, 0.000, 0.565, 0.565, 0.565
+Training Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+Test Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=0.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --per-negative=0.3 --loss=logistic --num-features=200
+Training time: 4.495, 0.000, 4.495, 4.495, 4.495
+Test time: 0.131, 0.000, 0.131, 0.131, 0.131
+Training Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+Test Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+glm-classification, glm-classification --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-iterations=20 --optimizer=auto --reg-type=elastic-net --elastic-net-param=1.0 --reg-param=0.01 --feature-noise=1.0 --step-size=0.0 --per-negative=0.3 --loss=logistic --num-features=200
+Training time: 3.825, 0.000, 3.825, 3.825, 3.825
+Test time: 0.139, 0.000, 0.139, 0.139, 0.139
+Training Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+Test Set Metric: 100.0, 0.000, 100.0, 100.0, 100.0
+naive-bayes, naive-bayes --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=10000 --per-negative=0.3 --feature-noise=1.0 --nb-lambda=1.0 --model-type=multinomial
+Training time: 5.323, 0.000, 5.323, 5.323, 5.323
+Test time: 0.769, 0.000, 0.769, 0.769, 0.769
+Training Set Metric: 69.9013136514, 0.000, 69.9013136514, 69.9013136514, 69.9013136514
+Test Set Metric: 70.0691702372, 0.000, 70.0691702372, 70.0691702372, 70.0691702372
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 4.166, 0.000, 4.166, 4.166, 4.166
+Test time: 0.155, 0.000, 0.155, 0.155, 0.155
+Training Set Metric: 0.13291189126, 0.000, 0.13291189126, 0.13291189126, 0.13291189126
+Test Set Metric: 0.133057504344, 0.000, 0.133057504344, 0.133057504344, 0.133057504344
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 8.835, 0.000, 8.835, 8.835, 8.835
+Test time: 0.217, 0.000, 0.217, 0.217, 0.217
+Training Set Metric: 0.262159709467, 0.000, 0.262159709467, 0.262159709467, 0.262159709467
+Test Set Metric: 0.262218952072, 0.000, 0.262218952072, 0.262218952072, 0.262218952072
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 4.263, 0.000, 4.263, 4.263, 4.263
+Test time: 0.181, 0.000, 0.181, 0.181, 0.181
+Training Set Metric: 0.144280938811, 0.000, 0.144280938811, 0.144280938811, 0.144280938811
+Test Set Metric: 0.143643829432, 0.000, 0.143643829432, 0.143643829432, 0.143643829432
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 38.901, 0.000, 38.901, 38.901, 38.901
+Test time: 0.185, 0.000, 0.185, 0.185, 0.185
+Training Set Metric: 0.0776395278832, 0.000, 0.0776395278832, 0.0776395278832, 0.0776395278832
+Test Set Metric: 0.0775257810395, 0.000, 0.0775257810395, 0.0775257810395, 0.0775257810395
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 5.855, 0.000, 5.855, 5.855, 5.855
+Test time: 0.639, 0.000, 0.639, 0.639, 0.639
+Training Set Metric: 0.0531526441119, 0.000, 0.0531526441119, 0.0531526441119, 0.0531526441119
+Test Set Metric: 0.0532681392591, 0.000, 0.0532681392591, 0.0532681392591, 0.0532681392591
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 10.535, 0.000, 10.535, 10.535, 10.535
+Test time: 0.948, 0.000, 0.948, 0.948, 0.948
+Training Set Metric: 0.188989621269, 0.000, 0.188989621269, 0.188989621269, 0.188989621269
+Test Set Metric: 0.188561226616, 0.000, 0.188561226616, 0.188561226616, 0.188561226616
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 5.804, 0.000, 5.804, 5.804, 5.804
+Test time: 0.657, 0.000, 0.657, 0.657, 0.657
+Training Set Metric: 0.0832825091917, 0.000, 0.0832825091917, 0.0832825091917, 0.0832825091917
+Test Set Metric: 0.0833288195415, 0.000, 0.0833288195415, 0.0833288195415, 0.0833288195415
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 38.004, 0.000, 38.004, 38.004, 38.004
+Test time: 0.608, 0.000, 0.608, 0.608, 0.608
+Training Set Metric: 0.11928216221, 0.000, 0.11928216221, 0.11928216221, 0.11928216221
+Test Set Metric: 0.119044318258, 0.000, 0.119044318258, 0.119044318258, 0.119044318258
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 17.444, 0.000, 17.444, 17.444, 17.444
+Test time: 0.224, 0.000, 0.224, 0.224, 0.224
+Training Set Metric: 0.213741724858, 0.000, 0.213741724858, 0.213741724858, 0.213741724858
+Test Set Metric: 0.215633640418, 0.000, 0.215633640418, 0.215633640418, 0.215633640418
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 53.726, 0.000, 53.726, 53.726, 53.726
+Test time: 0.95, 0.000, 0.95, 0.95, 0.95
+Training Set Metric: 0.235754206737, 0.000, 0.235754206737, 0.235754206737, 0.235754206737
+Test Set Metric: 0.239603824052, 0.000, 0.239603824052, 0.239603824052, 0.239603824052
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 14.685, 0.000, 14.685, 14.685, 14.685
+Test time: 0.219, 0.000, 0.219, 0.219, 0.219
+Training Set Metric: 0.19564914113, 0.000, 0.19564914113, 0.19564914113, 0.19564914113
+Test Set Metric: 0.197607323274, 0.000, 0.197607323274, 0.197607323274, 0.197607323274
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 167.121, 0.000, 167.121, 167.121, 167.121
+Test time: 1.239, 0.000, 1.239, 1.239, 1.239
+Training Set Metric: 0.163683375989, 0.000, 0.163683375989, 0.163683375989, 0.163683375989
+Test Set Metric: 0.172007166465, 0.000, 0.172007166465, 0.172007166465, 0.172007166465
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 16.12, 0.000, 16.12, 16.12, 16.12
+Test time: 0.955, 0.000, 0.955, 0.955, 0.955
+Training Set Metric: 0.185157196954, 0.000, 0.185157196954, 0.185157196954, 0.185157196954
+Test Set Metric: 0.186506879333, 0.000, 0.186506879333, 0.186506879333, 0.186506879333
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 51.157, 0.000, 51.157, 51.157, 51.157
+Test time: 0.981, 0.000, 0.981, 0.981, 0.981
+Training Set Metric: 0.229160015398, 0.000, 0.229160015398, 0.229160015398, 0.229160015398
+Test Set Metric: 0.23310141421, 0.000, 0.23310141421, 0.23310141421, 0.23310141421
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 16.474, 0.000, 16.474, 16.474, 16.474
+Test time: 0.619, 0.000, 0.619, 0.619, 0.619
+Training Set Metric: 0.208607913649, 0.000, 0.208607913649, 0.208607913649, 0.208607913649
+Test Set Metric: 0.210148352006, 0.000, 0.210148352006, 0.210148352006, 0.210148352006
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=0 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 170.099, 0.000, 170.099, 170.099, 170.099
+Test time: 1.114, 0.000, 1.114, 1.114, 1.114
+Training Set Metric: 0.19560647742, 0.000, 0.19560647742, 0.19560647742, 0.19560647742
+Test Set Metric: 0.205808246057, 0.000, 0.205808246057, 0.205808246057, 0.205808246057
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 3.855, 0.000, 3.855, 3.855, 3.855
+Test time: 0.162, 0.000, 0.162, 0.162, 0.162
+Training Set Metric: 89.9396722321, 0.000, 89.9396722321, 89.9396722321, 89.9396722321
+Test Set Metric: 89.9541132088, 0.000, 89.9541132088, 89.9541132088, 89.9541132088
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 4.225, 0.000, 4.225, 4.225, 4.225
+Test time: 0.295, 0.000, 0.295, 0.295, 0.295
+Training Set Metric: 60.366566437, 0.000, 60.366566437, 60.366566437, 60.366566437
+Test Set Metric: 60.2869224645, 0.000, 60.2869224645, 60.2869224645, 60.2869224645
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 4.259, 0.000, 4.259, 4.259, 4.259
+Test time: 0.267, 0.000, 0.267, 0.267, 0.267
+Training Set Metric: 87.2335723578, 0.000, 87.2335723578, 87.2335723578, 87.2335723578
+Test Set Metric: 87.2577141417, 0.000, 87.2577141417, 87.2577141417, 87.2577141417
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 38.503, 0.000, 38.503, 38.503, 38.503
+Test time: 0.174, 0.000, 0.174, 0.174, 0.174
+Training Set Metric: 91.4104178145, 0.000, 91.4104178145, 91.4104178145, 91.4104178145
+Test Set Metric: 91.4259310378, 0.000, 91.4259310378, 91.4259310378, 91.4259310378
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 5.529, 0.000, 5.529, 5.529, 5.529
+Test time: 0.852, 0.000, 0.852, 0.852, 0.852
+Training Set Metric: 87.0107806011, 0.000, 87.0107806011, 87.0107806011, 87.0107806011
+Test Set Metric: 87.1384964975, 0.000, 87.1384964975, 87.1384964975, 87.1384964975
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 6.041, 0.000, 6.041, 6.041, 6.041
+Test time: 0.981, 0.000, 0.981, 0.981, 0.981
+Training Set Metric: 72.3209241258, 0.000, 72.3209241258, 72.3209241258, 72.3209241258
+Test Set Metric: 72.2822977801, 0.000, 72.2822977801, 72.2822977801, 72.2822977801
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 5.783, 0.000, 5.783, 5.783, 5.783
+Test time: 0.637, 0.000, 0.637, 0.637, 0.637
+Training Set Metric: 88.8612121352, 0.000, 88.8612121352, 88.8612121352, 88.8612121352
+Test Set Metric: 88.940763233, 0.000, 88.940763233, 88.940763233, 88.940763233
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=5 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 38.1, 0.000, 38.1, 38.1, 38.1
+Test time: 1.075, 0.000, 1.075, 1.075, 1.075
+Training Set Metric: 93.7338318482, 0.000, 93.7338318482, 93.7338318482, 93.7338318482
+Test Set Metric: 93.8122842181, 0.000, 93.8122842181, 93.8122842181, 93.8122842181
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 10.734, 0.000, 10.734, 10.734, 10.734
+Test time: 0.214, 0.000, 0.214, 0.214, 0.214
+Training Set Metric: 73.2240907086, 0.000, 73.2240907086, 73.2240907086, 73.2240907086
+Test Set Metric: 72.2166880698, 0.000, 72.2166880698, 72.2166880698, 72.2166880698
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 27.511, 0.000, 27.511, 27.511, 27.511
+Test time: 1.211, 0.000, 1.211, 1.211, 1.211
+Training Set Metric: 59.2083092926, 0.000, 59.2083092926, 59.2083092926, 59.2083092926
+Test Set Metric: 52.8630237275, 0.000, 52.8630237275, 52.8630237275, 52.8630237275
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 13.365, 0.000, 13.365, 13.365, 13.365
+Test time: 0.205, 0.000, 0.205, 0.205, 0.205
+Training Set Metric: 71.9819366683, 0.000, 71.9819366683, 71.9819366683, 71.9819366683
+Test Set Metric: 70.7620727868, 0.000, 70.7620727868, 70.7620727868, 70.7620727868
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 169.565, 0.000, 169.565, 169.565, 169.565
+Test time: 1.076, 0.000, 1.076, 1.076, 1.076
+Training Set Metric: 78.4613969283, 0.000, 78.4613969283, 78.4613969283, 78.4613969283
+Test Set Metric: 74.3602053104, 0.000, 74.3602053104, 74.3602053104, 74.3602053104
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 12.485, 0.000, 12.485, 12.485, 12.485
+Test time: 0.663, 0.000, 0.663, 0.663, 0.663
+Training Set Metric: 71.0248720797, 0.000, 71.0248720797, 71.0248720797, 71.0248720797
+Test Set Metric: 69.8279345343, 0.000, 69.8279345343, 69.8279345343, 69.8279345343
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.RandomForest --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 25.551, 0.000, 25.551, 25.551, 25.551
+Test time: 1.659, 0.000, 1.659, 1.659, 1.659
+Training Set Metric: 59.9965801265, 0.000, 59.9965801265, 59.9965801265, 59.9965801265
+Test Set Metric: 54.6484879762, 0.000, 54.6484879762, 54.6484879762, 54.6484879762
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=1 --feature-subset-strategy=auto
+Training time: 15.552, 0.000, 15.552, 15.552, 15.552
+Test time: 0.591, 0.000, 0.591, 0.591, 0.591
+Training Set Metric: 70.3992952261, 0.000, 70.3992952261, 70.3992952261, 70.3992952261
+Test Set Metric: 69.2578501618, 0.000, 69.2578501618, 69.2578501618, 69.2578501618
+decision-tree, decision-tree --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=500 --label-type=2 --frac-categorical-features=0.5 --frac-binary-features=0.5 --tree-depth=10 --max-bins=32 --ensemble-type=ml.GradientBoostedTrees --training-data= --test-data= --test-data-fraction=0.2 --num-trees=10 --feature-subset-strategy=auto
+Training time: 170.82, 0.000, 170.82, 170.82, 170.82
+Test time: 1.043, 0.000, 1.043, 1.043, 1.043
+Training Set Metric: 78.5884922258, 0.000, 78.5884922258, 78.5884922258, 78.5884922258
+Test Set Metric: 74.7574641047, 0.000, 74.7574641047, 74.7574641047, 74.7574641047
+als, als --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-users=6000000 --num-products=5000000 --num-ratings=50000000 --num-iterations=10 --rank=10 --reg-param=0.1 
+Training time: 56.106, 0.000, 56.106, 56.106, 56.106
+Test time: 14.493, 0.000, 14.493, 14.493, 14.493
+Training Set Metric: 0.246925017171, 0.000, 0.246925017171, 0.246925017171, 0.246925017171
+Test Set Metric: 3.34620581223, 0.000, 3.34620581223, 3.34620581223, 3.34620581223
+kmeans, kmeans --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=10000 --num-centers=20 --num-iterations=20
+Training time: 91.121, 0.000, 91.121, 91.121, 91.121
+Test time: 4.198, 0.000, 4.198, 4.198, 4.198
+Training Set Metric: 113.689946631, 0.000, 113.689946631, 113.689946631, 113.689946631
+Test Set Metric: 113.83725371, 0.000, 113.83725371, 113.83725371, 113.83725371
+gmm, gmm --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=1000000 --num-features=100 --num-centers=20 --num-iterations=20
+Time: 117.314, 0.000, 117.314, 117.314, 117.314
+
+lda, lda --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-documents=50000 --num-vocab=10000 --num-topics=20 --num-iterations=20 --document-length=100 --optimizer=em
+Time: 75.527, 0.000, 75.527, 75.527, 75.527
+
+lda, lda --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-documents=50000 --num-vocab=10000 --num-topics=20 --num-iterations=20 --document-length=100 --optimizer=online
+Time: 15.582, 0.000, 15.582, 15.582, 15.582
+
+pic, pic --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-examples=10000000 --node-degree=20 --num-centers=40 --num-iterations=20
+Time: 156.376, 0.000, 156.376, 156.376, 156.376
+
+svd, svd --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=1000000 --num-cols=500 --rank=10
+Time: 138.653, 0.000, 138.653, 138.653, 138.653
+
+pca, pca --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=1000000 --num-cols=1000 --rank=50
+Time: 28.274, 0.000, 28.274, 28.274, 28.274
+
+summary-statistics, summary-statistics --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=1000000 --num-cols=500 --rank=10
+Time: 0.975, 0.000, 0.975, 0.975, 0.975
+
+block-matrix-mult, block-matrix-mult --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --m=20000 --k=10000 --n=10000 --block-size=1024
+Time: 88.786, 0.000, 88.786, 88.786, 88.786
+
+pearson, pearson --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=1000000 --num-cols=1000
+Time: 20.403, 0.000, 20.403, 20.403, 20.403
+
+spearman, spearman --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=1000000 --num-cols=100
+Time: 23.259, 0.000, 23.259, 23.259, 23.259
+
+chi-sq-feature, chi-sq-feature --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=2000000 --num-cols=500
+Time: 14.123, 0.000, 14.123, 14.123, 14.123
+
+chi-sq-gof, chi-sq-gof --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=50000000 --num-cols=0
+Time: 46.294, 0.000, 46.294, 46.294, 46.294
+
+chi-sq-mat, chi-sq-mat --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-rows=20000 --num-cols=0
+Time: 12.218, 0.000, 12.218, 12.218, 12.218
+
+word2vec, word2vec --num-trials=2 --inter-trial-wait=3 --num-partitions=128 --random-seed=5 --num-sentences=1000000 --num-words=10000 --vector-size=100 --num-iterations=3 --min-count=5
+Time: 148.022, 0.000, 148.022, 148.022, 148.022
+
