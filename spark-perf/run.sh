@@ -3,21 +3,37 @@
 set -e
 set -x
 
-EXPR=r3.8xlarge.1x
+EXPR=r3.8xlarge.1x.smoke
 
 docker build -t spark-perf .
 
-mkdir results || true
+outdir=results.${EXPR}.date-$(date +"%m-%d-%Y-%H-%M-%S")
+mkdir $outdir
 
 sudo rm -rf logs
 mkdir logs
 
-# -it --entrypoint=/bin/bash \
-docker run \
-  --rm -it \
+cid=$(docker run \
+  -d -it \
   -v `pwd`/$EXPR/config.py:/spark-perf/config/config.py \
   -v `pwd`/$EXPR/spark-env.sh:/spark/conf/spark-env.sh \
   -v `pwd`/slaves:/spark/conf/slaves \
-  -v `pwd`/results:/spark-perf/results \
+  -v `pwd`/$outdir:/spark-perf/results \
   -v `pwd`/logs/:/spark/logs \
-  spark-perf bin/run
+  spark-perf bin/run)
+
+while true; do
+  RUNNING=$(docker inspect --format="{{ .State.Running }}" $cid 2> /dev/null)
+  if [ "$RUNNING" == "false" ]; then
+    break
+  fi
+
+  echo `date +%s` >> $outdir/stats.log
+  echo `docker stats --no-stream $cid` >> $outdir/stats.log
+
+  docker logs --tail=10 $cid
+
+  sleep 2
+done
+
+docker rm $cid
