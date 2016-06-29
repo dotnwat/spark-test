@@ -6,6 +6,13 @@ cd spark-test/spark-perf
 ./run.sh <experiment number>
 ```
 
+See max memory used:
+
+```bash
+issdm@pl2:~/spark-test/spark-perf$ ./max-mem.py results.dir/stats.log 
+peak memory usage: 111.100000 gb
+```
+
 ## Customizing the run
 
 ```diff
