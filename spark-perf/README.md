@@ -3,10 +3,46 @@ Instructions
 ```
 git clone https://github.com/noahdesu/spark-test.git
 cd spark-test/spark-perf
-./run.sh
+./run.sh <experiment number>
 ```
 
 ## Customizing the run
+
+```diff
+issdm@pl2:~/spark-test/spark-perf$ diff -uprN scale_test_1 scale_test_2
+diff -uprN scale_test_1/config.py scale_test_2/config.py
+--- scale_test_1/config.py      2016-06-29 16:05:40.265530638 -0700
++++ scale_test_2/config.py      2016-06-29 16:09:07.961539154 -0700
+@@ -126,7 +126,7 @@ PYTHON_MLLIB_OUTPUT_FILENAME = "results/
+ # number of records in a generated dataset) if you are running the tests with more
+ # or fewer nodes. When developing new test suites, you might want to set this to a small
+ # value suitable for a single machine, such as 0.001.
+-SCALE_FACTOR = 0.1
++SCALE_FACTOR = 0.545
+ 
+ assert SCALE_FACTOR > 0, "SCALE_FACTOR must be > 0."
+ 
+@@ -145,7 +145,7 @@ COMMON_JAVA_OPTS = [
+     # Fraction of JVM memory used for caching RDDs.
+     JavaOptionSet("spark.storage.memoryFraction", [0.66]),
+     JavaOptionSet("spark.serializer", ["org.apache.spark.serializer.KryoSerializer"]),
+-    JavaOptionSet("spark.executor.memory", ["200g"]),
++    JavaOptionSet("spark.executor.memory", ["700g"]),
+     # Turn event logging on in order better diagnose failed tests. Off by default as it crashes
+     # releases prior to 1.0.2
+     # JavaOptionSet("spark.eventLog.enabled", [True]),
+diff -uprN scale_test_1/spark-env.sh scale_test_2/spark-env.sh
+--- scale_test_1/spark-env.sh   2016-06-29 16:04:43.381528305 -0700
++++ scale_test_2/spark-env.sh   2016-06-29 16:08:29.729537586 -0700
+@@ -1,3 +1,3 @@
+ SPARK_WORKER_INSTANCES=1
+-SPARK_WORKER_CORES=16
+-SPARK_WORKER_MEMORY=200g
++SPARK_WORKER_CORES=32
++SPARK_WORKER_MEMORY=700g
+```
+
+## Customizing the run 2
 
 Setup `spark-env.sh`
 

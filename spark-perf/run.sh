@@ -3,7 +3,13 @@
 set -e
 set -x
 
-EXPR=r3.8xlarge.1x.smoke
+EXPR_NUM=$1
+EXPR=scale_test_${EXPR_NUM}
+DIR=$PWD/$EXPR
+if [ ! -d $DIR ]; then
+  echo "test $EXPR_NUM does not exist."
+  exit 1
+fi
 
 docker build -t spark-perf .
 
