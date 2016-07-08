@@ -18,7 +18,7 @@ from sparkperf.config_utils import FlagSet, JavaOptionSet, OptionSet, ConstantOp
 # ================================ #
 
 # Point to an installation of Spark on the cluster.
-SPARK_HOME_DIR = "/spark"
+SPARK_HOME_DIR = "spark"
 
 # Use a custom configuration directory
 SPARK_CONF_DIR = SPARK_HOME_DIR + "/conf"
@@ -433,8 +433,8 @@ MLLIB_GLM_REGRESSION_TEST_OPTS = MLLIB_GLM_TEST_OPTS + [
     OptionSet("loss", ["l2"])
 ]
 
-MLLIB_TESTS += [("glm-regression", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("glm-regression")] + MLLIB_GLM_REGRESSION_TEST_OPTS)]
+#MLLIB_TESTS += [("glm-regression", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("glm-regression")] + MLLIB_GLM_REGRESSION_TEST_OPTS)]
 
 # Classification Tests #
 MLLIB_CLASSIFICATION_TEST_OPTS = MLLIB_GLM_TEST_OPTS + [
@@ -450,9 +450,9 @@ MLLIB_GLM_CLASSIFICATION_TEST_OPTS = MLLIB_CLASSIFICATION_TEST_OPTS + [
     OptionSet("loss", ["logistic"])
 ]
 
-MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
-                 MLLIB_GLM_CLASSIFICATION_TEST_OPTS)]
+#MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
+#                 MLLIB_GLM_CLASSIFICATION_TEST_OPTS)]
 
 if MLLIB_SPARK_VERSION >= 1.5:
     MLLIB_GLM_ELASTIC_NET_TEST_OPTS = MLLIB_REGRESSION_CLASSIFICATION_TEST_OPTS + [
@@ -463,7 +463,7 @@ if MLLIB_SPARK_VERSION >= 1.5:
         # Using elastic-net regularization.
         OptionSet("reg-type", ["elastic-net"]),
         # Runs with L2 (param = 0.0), L1 (param = 1.0).
-        OptionSet("elastic-net-param", [0.0, 1.0]),
+        OptionSet("elastic-net-param", [1.0]),
         # Regularization param (lambda)
         OptionSet("reg-param", [0.01]),
         # The scale factor for the noise in feature values
@@ -487,10 +487,10 @@ if MLLIB_SPARK_VERSION >= 1.5:
         MLLIB_GLM_ELASTIC_NET_REGRESSION_TEST_OPTS +
         [OptionSet("num-features", [10000], can_scale=False)])]
     # Test normal equation solver
-    MLLIB_TESTS += [("glm-regression", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-                     MLLIB_JAVA_OPTS, [ConstantOption("glm-regression")] +
-                     MLLIB_GLM_ELASTIC_NET_REGRESSION_TEST_OPTS +
-                     [OptionSet("num-features", [200], can_scale=False)])]
+    #MLLIB_TESTS += [("glm-regression", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+    #                 MLLIB_JAVA_OPTS, [ConstantOption("glm-regression")] +
+    #                 MLLIB_GLM_ELASTIC_NET_REGRESSION_TEST_OPTS +
+    #                 [OptionSet("num-features", [200], can_scale=False)])]
 
     MLLIB_GLM_ELASTIC_NET_CLASSIFICATION_TEST_OPTS = MLLIB_GLM_ELASTIC_NET_TEST_OPTS + [
         # Expected fraction of examples which are negative
@@ -500,15 +500,15 @@ if MLLIB_SPARK_VERSION >= 1.5:
     ]
 
     # Test L-BFGS
-    MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-                     MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
-                     MLLIB_GLM_ELASTIC_NET_CLASSIFICATION_TEST_OPTS +
-                     [OptionSet("num-features", [10000], can_scale=False)])]
+    #MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+    #                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
+    #                 MLLIB_GLM_ELASTIC_NET_CLASSIFICATION_TEST_OPTS +
+    #                 [OptionSet("num-features", [10000], can_scale=False)])]
     # Test normal equation solver
-    MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-                     MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
-                     MLLIB_GLM_ELASTIC_NET_CLASSIFICATION_TEST_OPTS +
-                     [OptionSet("num-features", [200], can_scale=False)])]
+    #MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+    #                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
+    #                 MLLIB_GLM_ELASTIC_NET_CLASSIFICATION_TEST_OPTS +
+    #                 [OptionSet("num-features", [200], can_scale=False)])]
 
 NAIVE_BAYES_TEST_OPTS = MLLIB_REGRESSION_CLASSIFICATION_TEST_OPTS + [
     # The number of features per example
@@ -523,9 +523,9 @@ NAIVE_BAYES_TEST_OPTS = MLLIB_REGRESSION_CLASSIFICATION_TEST_OPTS + [
     OptionSet("model-type", ["multinomial"]),
 ]
 
-MLLIB_TESTS += [("naive-bayes", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("naive-bayes")] +
-    NAIVE_BAYES_TEST_OPTS)]
+#MLLIB_TESTS += [("naive-bayes", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("naive-bayes")] +
+#    NAIVE_BAYES_TEST_OPTS)]
 
 # Decision Trees #
 MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
@@ -535,7 +535,7 @@ MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-features", [500], can_scale=False),
     # Type of label: 0 indicates regression, 2+ indicates classification with this many classes
     # Note: multi-class (>2) is not supported in Spark 1.0.
-    OptionSet("label-type", [0, 2], can_scale=False),
+    OptionSet("label-type", [2], can_scale=False),
     # Fraction of features which are categorical
     OptionSet("frac-categorical-features", [0.5], can_scale=False),
     # Fraction of categorical features which are binary. Others have 20 categories.
@@ -543,17 +543,17 @@ MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
     # Depth of true decision tree model used to label examples.
     # WARNING: The meaning of depth changed from Spark 1.0 to Spark 1.1:
     #          depth=N for Spark 1.0 should be depth=N-1 for Spark 1.1
-    OptionSet("tree-depth", [5, 10], can_scale=False),
+    OptionSet("tree-depth", [10], can_scale=False),
     # Maximum number of bins for the decision tree learning algorithm.
     OptionSet("max-bins", [32], can_scale=False),
 ]
 
 if MLLIB_SPARK_VERSION >= 1.2:
-    ensembleTypes = ["RandomForest"]
-    if MLLIB_SPARK_VERSION >= 1.3:
-        ensembleTypes.append("GradientBoostedTrees")
-    if MLLIB_SPARK_VERSION >= 1.4:
-        ensembleTypes.extend(["ml.RandomForest", "ml.GradientBoostedTrees"])
+    ensembleTypes = ["ml.RandomForest", "ml.GradientBoostedTrees"]
+    #if MLLIB_SPARK_VERSION >= 1.3:
+    #    ensembleTypes.append("GradientBoostedTrees")
+    #if MLLIB_SPARK_VERSION >= 1.4:
+    #    ensembleTypes.extend(["ml.RandomForest", "ml.GradientBoostedTrees"])
     MLLIB_DECISION_TREE_TEST_OPTS += [
         # Ensemble type: mllib.RandomForest, mllib.GradientBoostedTrees,
         #                ml.RandomForest, ml.GradientBoostedTrees
@@ -567,7 +567,7 @@ if MLLIB_SPARK_VERSION >= 1.2:
         #  (Ignored if given training and test dataset, or if using synthetic data.)
         OptionSet("test-data-fraction", [0.2], can_scale=False),
         # Number of trees. If 1, then run DecisionTree. If >1, then run RandomForest.
-        OptionSet("num-trees", [1, 10], can_scale=False),
+        OptionSet("num-trees", [10], can_scale=False),
         # Feature subset sampling strategy: auto, all, sqrt, log2, onethird
         # (only used for RandomForest)
         OptionSet("feature-subset-strategy", ["auto"])
@@ -595,9 +595,9 @@ MLLIB_RECOMMENDATION_TEST_OPTS = MLLIB_COMMON_OPTS + [
      FlagSet("implicit-prefs", [False])
 ]
 
-MLLIB_TESTS += [("als", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("als")] +
-    MLLIB_RECOMMENDATION_TEST_OPTS)]
+#MLLIB_TESTS += [("als", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("als")] +
+#    MLLIB_RECOMMENDATION_TEST_OPTS)]
 
 # Clustering Tests #
 MLLIB_CLUSTERING_TEST_OPTS = MLLIB_COMMON_OPTS + [
@@ -620,9 +620,9 @@ MLLIB_GMM_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-centers", [20], can_scale=False),
     OptionSet("num-iterations", [20])]
 
-if MLLIB_SPARK_VERSION >= 1.3:
-    MLLIB_TESTS += [("gmm", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("gmm")] + MLLIB_GMM_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.3:
+#    MLLIB_TESTS += [("gmm", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("gmm")] + MLLIB_GMM_TEST_OPTS)]
 
 MLLIB_LDA_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-documents", [50000], can_scale=True),
@@ -632,9 +632,9 @@ MLLIB_LDA_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("document-length", [100]),
     OptionSet("optimizer", ["em", "online"])]
 
-if MLLIB_SPARK_VERSION >= 1.4:
-    MLLIB_TESTS += [("lda", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("lda")] + MLLIB_LDA_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.4:
+#    MLLIB_TESTS += [("lda", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("lda")] + MLLIB_LDA_TEST_OPTS)]
 
 MLLIB_PIC_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-examples", [10000000], can_scale=True),
@@ -642,9 +642,9 @@ MLLIB_PIC_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-centers", [40], can_scale=False),
     OptionSet("num-iterations", [20])]
 
-if MLLIB_SPARK_VERSION >= 1.3:
-    MLLIB_TESTS += [("pic", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("pic")] + MLLIB_PIC_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.3:
+#    MLLIB_TESTS += [("pic", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("pic")] + MLLIB_PIC_TEST_OPTS)]
 
 # Linear Algebra Tests #
 MLLIB_LINALG_TEST_OPTS = MLLIB_COMMON_OPTS + [
@@ -668,12 +668,12 @@ MLLIB_BIG_LINALG_TEST_OPTS = MLLIB_COMMON_OPTS + [
 MLLIB_TESTS += [("svd", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
     MLLIB_JAVA_OPTS, [ConstantOption("svd")] + MLLIB_BIG_LINALG_TEST_OPTS)]
 
-MLLIB_TESTS += [("pca", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("pca")] + MLLIB_LINALG_TEST_OPTS)]
+#MLLIB_TESTS += [("pca", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("pca")] + MLLIB_LINALG_TEST_OPTS)]
 
-MLLIB_TESTS += [("summary-statistics", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("summary-statistics")] +
-    MLLIB_BIG_LINALG_TEST_OPTS)]
+#MLLIB_TESTS += [("summary-statistics", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("summary-statistics")] +
+#    MLLIB_BIG_LINALG_TEST_OPTS)]
 
 MLLIB_BLOCK_MATRIX_MULT_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("m", [20000], can_scale=True),
@@ -681,9 +681,9 @@ MLLIB_BLOCK_MATRIX_MULT_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("n", [10000], can_scale=False),
     OptionSet("block-size", [1024], can_scale=False)]
 
-if MLLIB_SPARK_VERSION >= 1.3:
-   MLLIB_TESTS += [("block-matrix-mult", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-                   MLLIB_JAVA_OPTS, [ConstantOption("block-matrix-mult")] + MLLIB_BLOCK_MATRIX_MULT_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.3:
+#   MLLIB_TESTS += [("block-matrix-mult", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#                   MLLIB_JAVA_OPTS, [ConstantOption("block-matrix-mult")] + MLLIB_BLOCK_MATRIX_MULT_TEST_OPTS)]
 
 # Statistic Toolkit Tests #
 MLLIB_STATS_TEST_OPTS = MLLIB_COMMON_OPTS
@@ -708,21 +708,21 @@ MLLIB_CHI_SQ_MAT_TEST_OPTS = MLLIB_STATS_TEST_OPTS + \
                              [OptionSet("num-rows", [20000], can_scale=True),
                               OptionSet("num-cols", [0], can_scale=False)]
 
-if MLLIB_SPARK_VERSION >= 1.1:
-    MLLIB_TESTS += [("pearson", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("pearson")] + MLLIB_PEARSON_TEST_OPTS)]
-
-    MLLIB_TESTS += [("spearman", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("spearman")] + MLLIB_SPEARMAN_TEST_OPTS)]
-
-    MLLIB_TESTS += [("chi-sq-feature", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-feature")] + MLLIB_CHI_SQ_FEATURE_TEST_OPTS)]
-
-    MLLIB_TESTS += [("chi-sq-gof", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-gof")] + MLLIB_CHI_SQ_GOF_TEST_OPTS)]
-
-    MLLIB_TESTS += [("chi-sq-mat", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-mat")] + MLLIB_CHI_SQ_MAT_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.1:
+#    MLLIB_TESTS += [("pearson", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("pearson")] + MLLIB_PEARSON_TEST_OPTS)]
+#
+#    MLLIB_TESTS += [("spearman", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("spearman")] + MLLIB_SPEARMAN_TEST_OPTS)]
+#
+#    MLLIB_TESTS += [("chi-sq-feature", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-feature")] + MLLIB_CHI_SQ_FEATURE_TEST_OPTS)]
+#
+#    MLLIB_TESTS += [("chi-sq-gof", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-gof")] + MLLIB_CHI_SQ_GOF_TEST_OPTS)]
+#
+#    MLLIB_TESTS += [("chi-sq-mat", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("chi-sq-mat")] + MLLIB_CHI_SQ_MAT_TEST_OPTS)]
 
 # Feature Transformation Tests #
 
