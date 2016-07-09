@@ -14,4 +14,10 @@ ssh-keygen -t rsa -N ''
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
+# Run Tests
 
+```bash
+./spark-perf.sh 1
+./spark-perf.sh 2
+etc...
+```
