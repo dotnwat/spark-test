@@ -13,11 +13,13 @@ fi
 
 docker build -t spark-perf .
 
-outdir=results.${EXPR}.date-$(date +"%m-%d-%Y-%H-%M-%S")
+datestr=$(date +"%m-%d-%Y-%H-%M-%S")
+
+outdir=results.${EXPR}.date-$datestr
 mkdir $outdir
 
-sudo rm -rf logs
-mkdir logs
+logdir=logs.${EXPR}.date-$datestr
+mkdir $logdir
 
 cid=$(docker run \
   -d -it \
@@ -25,7 +27,7 @@ cid=$(docker run \
   -v `pwd`/$EXPR/spark-env.sh:/spark/conf/spark-env.sh \
   -v `pwd`/slaves:/spark/conf/slaves \
   -v `pwd`/$outdir:/spark-perf/results \
-  -v `pwd`/logs/:/spark/logs \
+  -v `pwd`/$logdir:/spark/logs \
   spark-perf bin/run)
 
 while true; do
