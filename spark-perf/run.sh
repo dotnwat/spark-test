@@ -36,7 +36,7 @@ cid=$(docker run \
   -v `pwd`/$logdir:/spark/logs \
   spark-perf bin/run)
 
-trap 'finish $cid' EXIT
+trap 'finish $cid' SIGINT
 
 while true; do
   RUNNING=$(docker inspect --format="{{ .State.Running }}" $cid 2> /dev/null)
@@ -51,3 +51,6 @@ while true; do
 
   sleep 2
 done
+
+docker kill $cid || true
+docker rm $cid || true
