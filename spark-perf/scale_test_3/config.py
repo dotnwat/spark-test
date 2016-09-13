@@ -441,7 +441,7 @@ MLLIB_CLASSIFICATION_TEST_OPTS = MLLIB_GLM_TEST_OPTS + [
     # Expected fraction of examples which are negative
     OptionSet("per-negative", [0.3]),
     # Optimization algorithm: sgd, l-bfgs
-    OptionSet("optimizer", ["sgd", "l-bfgs"])
+    OptionSet("optimizer", ["sgd"])
 ]
 
 # GLM Classification Tests #
@@ -450,9 +450,9 @@ MLLIB_GLM_CLASSIFICATION_TEST_OPTS = MLLIB_CLASSIFICATION_TEST_OPTS + [
     OptionSet("loss", ["logistic"])
 ]
 
-#MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-#                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
-#                 MLLIB_GLM_CLASSIFICATION_TEST_OPTS)]
+MLLIB_TESTS += [("glm-classification", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+                 MLLIB_JAVA_OPTS, [ConstantOption("glm-classification")] +
+                 MLLIB_GLM_CLASSIFICATION_TEST_OPTS)]
 
 if MLLIB_SPARK_VERSION >= 1.5:
     MLLIB_GLM_ELASTIC_NET_TEST_OPTS = MLLIB_REGRESSION_CLASSIFICATION_TEST_OPTS + [
@@ -523,9 +523,9 @@ NAIVE_BAYES_TEST_OPTS = MLLIB_REGRESSION_CLASSIFICATION_TEST_OPTS + [
     OptionSet("model-type", ["multinomial"]),
 ]
 
-#MLLIB_TESTS += [("naive-bayes", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-#    MLLIB_JAVA_OPTS, [ConstantOption("naive-bayes")] +
-#    NAIVE_BAYES_TEST_OPTS)]
+MLLIB_TESTS += [("naive-bayes", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+    MLLIB_JAVA_OPTS, [ConstantOption("naive-bayes")] +
+    NAIVE_BAYES_TEST_OPTS)]
 
 # Decision Trees #
 MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
@@ -535,7 +535,7 @@ MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("num-features", [500], can_scale=False),
     # Type of label: 0 indicates regression, 2+ indicates classification with this many classes
     # Note: multi-class (>2) is not supported in Spark 1.0.
-    OptionSet("label-type", [2], can_scale=False),
+    OptionSet("label-type", [0, 2], can_scale=False),
     # Fraction of features which are categorical
     OptionSet("frac-categorical-features", [0.5], can_scale=False),
     # Fraction of categorical features which are binary. Others have 20 categories.
@@ -549,7 +549,7 @@ MLLIB_DECISION_TREE_TEST_OPTS = MLLIB_COMMON_OPTS + [
 ]
 
 if MLLIB_SPARK_VERSION >= 1.2:
-    ensembleTypes = ["ml.RandomForest", "ml.GradientBoostedTrees"]
+    ensembleTypes = ["ml.RandomForest"] #, "ml.GradientBoostedTrees"]
     #if MLLIB_SPARK_VERSION >= 1.3:
     #    ensembleTypes.append("GradientBoostedTrees")
     #if MLLIB_SPARK_VERSION >= 1.4:
@@ -595,9 +595,9 @@ MLLIB_RECOMMENDATION_TEST_OPTS = MLLIB_COMMON_OPTS + [
      FlagSet("implicit-prefs", [False])
 ]
 
-#MLLIB_TESTS += [("als", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-#    MLLIB_JAVA_OPTS, [ConstantOption("als")] +
-#    MLLIB_RECOMMENDATION_TEST_OPTS)]
+MLLIB_TESTS += [("als", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+    MLLIB_JAVA_OPTS, [ConstantOption("als")] +
+    MLLIB_RECOMMENDATION_TEST_OPTS)]
 
 # Clustering Tests #
 MLLIB_CLUSTERING_TEST_OPTS = MLLIB_COMMON_OPTS + [
@@ -665,8 +665,8 @@ MLLIB_BIG_LINALG_TEST_OPTS = MLLIB_COMMON_OPTS + [
     OptionSet("rank", [10], can_scale=False)
 ]
 
-MLLIB_TESTS += [("svd", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-    MLLIB_JAVA_OPTS, [ConstantOption("svd")] + MLLIB_BIG_LINALG_TEST_OPTS)]
+#MLLIB_TESTS += [("svd", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#    MLLIB_JAVA_OPTS, [ConstantOption("svd")] + MLLIB_BIG_LINALG_TEST_OPTS)]
 
 #MLLIB_TESTS += [("pca", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
 #    MLLIB_JAVA_OPTS, [ConstantOption("pca")] + MLLIB_LINALG_TEST_OPTS)]
@@ -735,9 +735,9 @@ MLLIB_WORD2VEC_TEST_OPTS = MLLIB_FEATURE_TEST_OPTS + \
                             OptionSet("num-iterations", [3], can_scale=False),
                             OptionSet("min-count", [5], can_scale=False)]
 
-if MLLIB_SPARK_VERSION >= 1.3:  # TODO: make it work in 1.2
-    MLLIB_TESTS += [("word2vec", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
-        MLLIB_JAVA_OPTS, [ConstantOption("word2vec")] + MLLIB_WORD2VEC_TEST_OPTS)]
+#if MLLIB_SPARK_VERSION >= 1.3:  # TODO: make it work in 1.2
+#    MLLIB_TESTS += [("word2vec", MLLIB_PERF_TEST_RUNNER, SCALE_FACTOR,
+#        MLLIB_JAVA_OPTS, [ConstantOption("word2vec")] + MLLIB_WORD2VEC_TEST_OPTS)]
 
 # Frequent Pattern Matching Tests #
 
